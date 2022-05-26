@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:get/get.dart';
 
 class Utils {
+  Utils._();
+
   ///Search
   // static bool isTextContainKeyword({String text = "", String keyword = ""}) {
   //   final newText = String.fromCharCodes(replaceCodeUnits(text.codeUnits)).toLowerCase();

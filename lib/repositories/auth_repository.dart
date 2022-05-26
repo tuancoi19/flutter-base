@@ -8,7 +8,7 @@ abstract class AuthRepository {
 
   Future<void> saveToken(TokenEntity token);
 
-  Future<void> removeToken();
+  Future<void>? removeToken();
 
   Future<TokenEntity?> signIn(String username, String password);
 }
@@ -24,7 +24,7 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<void> removeToken() async {
+  Future<void>? removeToken() async {
     return SecureStorageHelper.instance.removeToken();
   }
 

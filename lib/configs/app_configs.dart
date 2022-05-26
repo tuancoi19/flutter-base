@@ -29,7 +29,7 @@ class AppConfigs {
   static const dateDisplayFormat = 'dd/MM/yyyy';
 
   static const dateTimeAPIFormat =
-      "MM/dd/yyyy'T'hh:mm:ss.SSSZ"; //Use DateTime.parse(date) instead of ...
+      "yyyy-MM-ddTHH:mm:ss"; //Use DateTime.parse(date) instead of ...
   static const dateTimeDisplayFormat = 'dd/MM/yyyy HH:mm';
 
   ///Date range

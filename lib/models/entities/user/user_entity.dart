@@ -1,9 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_entity.g.dart';
 
 @JsonSerializable()
-class UserEntity {
+class UserEntity extends Equatable {
   @JsonKey()
   int? id;
   @JsonKey()
@@ -33,4 +34,12 @@ class UserEntity {
       _$UserEntityFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserEntityToJson(this);
+
+  @override
+  List<Object?> get props => [
+        id,
+        username,
+        birthday,
+        avatarUrl,
+      ];
 }
