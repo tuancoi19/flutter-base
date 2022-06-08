@@ -7,7 +7,7 @@ class AppSettingState extends Equatable {
 
   const AppSettingState({
     this.themeMode = ThemeMode.system,
-    this.primaryColor = AppColors.primary,
+    this.primaryColor = Colors.red,
     this.locale = AppConfigs.defaultLocal,
   });
 

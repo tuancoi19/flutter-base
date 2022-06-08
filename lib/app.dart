@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import 'blocs/app_cubit.dart';
 import 'blocs/setting/app_setting_cubit.dart';
+import 'common/app_colors.dart';
 import 'common/app_themes.dart';
 import 'generated/l10n.dart';
 import 'network/api_client.dart';
@@ -84,11 +85,19 @@ class _MyAppState extends State<MyApp> {
                 theme: AppThemes(
                   isDarkMode: false,
                   primaryColor: state.primaryColor,
-                ).theme,
+                ).theme.copyWith(
+                  extensions: <ThemeExtension<dynamic>>[
+                    AppColors.light(),
+                  ],
+                ),
                 darkTheme: AppThemes(
                   isDarkMode: true,
                   primaryColor: state.primaryColor,
-                ).theme,
+                ).theme.copyWith(
+                  extensions: <ThemeExtension<dynamic>>[
+                    AppColors.dark(),
+                  ],
+                ),
                 themeMode: state.themeMode,
                 initialRoute: RouteConfig.splash,
                 getPages: RouteConfig.getPages,

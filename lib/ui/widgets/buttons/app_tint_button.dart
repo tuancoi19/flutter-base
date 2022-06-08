@@ -19,6 +19,6 @@ class AppTintButton extends AppButton {
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
-          backgroundColor: AppColors.buttonBGTint,
+          backgroundColor: kSecondaryColor,
         );
 }

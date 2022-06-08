@@ -1,12 +1,10 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-class AppColors {
-  AppColors._();
+///Common
+const Color kPrimaryColor = Color(0xFFD9251D);
+const Color kSecondaryColor = Color(0xFF47CFFF);
 
-  ///Common
-  static const Color primary = Color(0xFFD9251D);
-  static const Color secondary = Color(0xFF47CFFF);
-
+class AppColors extends ThemeExtension<AppColors> {
   ///Background
   static const Color backgroundLight = Color(0xFFFFFFFF);
   static const Color backgroundDark = Color(0xFF0F1B2B);
@@ -34,12 +32,109 @@ class AppColors {
 
   ///Button
   static const Color buttonBGWhite = Color(0xFFcdd0d5);
-  static const Color buttonBGTint = secondary;
-  static const Color buttonBorder = secondary;
+
+  Color get buttonBGTint => secondary;
+
+  Color get buttonBorder => secondary;
 
   /// Tabs
   static const Color imageBG = Color(0xFF919191);
 
   ///BottomNavigationBar
   static const Color bottomNavigationBar = Color(0xFF919191);
+
+  const AppColors({
+    required this.primary,
+    required this.secondary,
+    required this.background,
+  });
+
+  final Color primary;
+  final Color secondary;
+  final Color background;
+
+  factory AppColors.dark() {
+    return const AppColors(
+      primary: kPrimaryColor,
+      secondary: kSecondaryColor,
+      background: backgroundDark,
+    );
+  }
+
+  factory AppColors.light() {
+    return const AppColors(
+      primary: kPrimaryColor,
+      secondary: kSecondaryColor,
+      background: backgroundDark,
+    );
+  }
+
+  @override
+  ThemeExtension<AppColors> copyWith({
+    Color? primary,
+    Color? secondary,
+    Color? background,
+  }) {
+    return AppColors(
+      primary: primary ?? this.primary,
+      secondary: secondary ?? this.secondary,
+      background: background ?? this.background,
+    );
+  }
+
+  @override
+  ThemeExtension<AppColors> lerp(ThemeExtension<AppColors>? other, double t) {
+    if (other is! AppColors) {
+      return this;
+    }
+    return AppColors(
+      primary: Color.lerp(primary, other.primary, t)!,
+      secondary: Color.lerp(secondary, other.secondary, t)!,
+      background: Color.lerp(background, other.background, t)!,
+    );
+  }
 }
+
+// class AppColors {
+//   AppColors._();
+//
+//   ///Common
+//   static const Color primary = Color(0xFFD9251D);
+//   static const Color secondary = Color(0xFF47CFFF);
+//
+//   ///Background
+//   static const Color backgroundLight = Color(0xFFFFFFFF);
+//   static const Color backgroundDark = Color(0xFF0F1B2B);
+//
+//   ///Shadow
+//   static const Color shadow = Color(0x25606060);
+//
+//   ///Border
+//   static const Color border = Color(0xFF606060);
+//
+//   ///Divider
+//   static const Color divider = Color(0xFF606060);
+//
+//   ///Text
+//   static const Color textWhite = Color(0xFFFFFFFF);
+//   static const Color textBlack = Color(0xFF000000);
+//   static const Color textBlue = Color(0xFF0000FF);
+//   static const Color textDisable = Color(0xFF89a3b1);
+//
+//   ///TextField
+//   static const Color textFieldEnabledBorder = Color(0xFF919191);
+//   static const Color textFieldFocusedBorder = Color(0xFFd74315);
+//   static const Color textFieldDisabledBorder = Color(0xFF919191);
+//   static const Color textFieldCursor = Color(0xFF919191);
+//
+//   ///Button
+//   static const Color buttonBGWhite = Color(0xFFcdd0d5);
+//   static const Color buttonBGTint = secondary;
+//   static const Color buttonBorder = secondary;
+//
+//   /// Tabs
+//   static const Color imageBG = Color(0xFF919191);
+//
+//   ///BottomNavigationBar
+//   static const Color bottomNavigationBar = Color(0xFF919191);
+// }

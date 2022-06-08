@@ -32,7 +32,7 @@ class AppTabBar extends StatelessWidget {
         labelStyle: AppTextStyle.blackS14,
         unselectedLabelStyle: AppTextStyle.whiteS14,
         indicator: BoxDecoration(
-          color: AppColors.secondary,
+          color: kSecondaryColor,
           borderRadius: const BorderRadius.all(Radius.circular(16)),
           boxShadow: AppShadow.boxShadow,
         ),

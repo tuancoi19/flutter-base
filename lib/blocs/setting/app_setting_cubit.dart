@@ -37,8 +37,8 @@ class AppSettingCubit extends Cubit<AppSettingState> with HydratedMixin {
           : ThemeMode.system,
       primaryColor: json['primaryColor'] is String
           ? (Utils.getColorFromHex(json['primaryColor'] as String) ??
-              AppColors.primary)
-          : AppColors.primary,
+              AppColors.dark().primary)
+          : AppColors.dark().primary,
       locale: json['local'] is String
           ? Locale.fromSubtags(languageCode: json['local'])
           : AppConfigs.defaultLocal,

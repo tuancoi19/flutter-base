@@ -11,8 +11,8 @@ class AppThemes {
 
   AppThemes({
     this.isDarkMode = false,
-    this.primaryColor = AppColors.primary,
-    this.secondaryColor = AppColors.secondary,
+    this.primaryColor = kPrimaryColor,
+    this.secondaryColor = kSecondaryColor,
   }) : brightness = isDarkMode ? Brightness.dark : Brightness.light;
 
   Color get backgroundColor =>

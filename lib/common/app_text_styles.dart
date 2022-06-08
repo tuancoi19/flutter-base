@@ -73,7 +73,7 @@ class AppTextStyle {
   static final greyS18W800 = greyS18.copyWith(fontWeight: FontWeight.w800);
 
   ///Tint
-  static const tint = TextStyle(color: AppColors.secondary);
+  static const tint = TextStyle(color: kSecondaryColor);
 
   //s12
   static final tintS12 = tint.copyWith(fontSize: 12);

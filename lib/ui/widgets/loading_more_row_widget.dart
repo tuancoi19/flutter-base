@@ -8,7 +8,7 @@ class LoadingMoreRowWidget extends StatelessWidget {
   const LoadingMoreRowWidget({
     Key? key,
     this.height = 80,
-    this.color = AppColors.secondary,
+    this.color = kSecondaryColor,
   }) : super(key: key);
 
   @override
@@ -23,7 +23,7 @@ class LoadingMoreRowWidget extends StatelessWidget {
           child: CircularProgressIndicator(
             backgroundColor: color,
             valueColor:
-                const AlwaysStoppedAnimation<Color>(AppColors.secondary),
+                const AlwaysStoppedAnimation<Color>(kSecondaryColor),
           ),
         ),
       ),

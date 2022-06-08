@@ -6,7 +6,7 @@ class AppCircularProgressIndicator extends StatelessWidget {
 
   const AppCircularProgressIndicator({
     Key? key,
-    this.color = AppColors.secondary,
+    this.color = kSecondaryColor,
   }) : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class AppCircularProgressIndicator extends StatelessWidget {
         height: 24,
         child: CircularProgressIndicator(
           backgroundColor: color,
-          valueColor: const AlwaysStoppedAnimation<Color>(AppColors.secondary),
+          valueColor: const AlwaysStoppedAnimation<Color>(kSecondaryColor),
         ),
       ),
     );
